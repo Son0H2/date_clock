@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사귄 날짜 카운터</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 20%;
+        }
+        .counter {
+            font-size: 2em;
+            color: #333;
+        }
+    </style>
+    <script>
+        function calculateDaysTogether() {
+            const startDate = new Date("2024-10-05T00:00:00+09:00");  // 사귄 날짜 (한국 시간 기준)
+            const currentDate = new Date();
+            const timeDifference = currentDate - startDate;
+            const daysTogether = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+            document.getElementById("daysTogether").innerText = `사귄 지 ${daysTogether}일째입니다!`;
+        }
+
+        window.onload = calculateDaysTogether;
+    </script>
+</head>
+<body>
+    <div class="counter" id="daysTogether"></div>
+</body>
+</html>
